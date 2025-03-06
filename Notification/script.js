@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
             container.innerHTML = ""; // Clears empty text content but keeps the container visible
         }
     }
-
     // Initialize the container's visibility state
     checkContainerContent();
 });
