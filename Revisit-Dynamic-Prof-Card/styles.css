@@ -1,0 +1,97 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-card {
+    background: #fff;
+    color: black;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 350px;
+
+    img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    h2 {
+        margin: 10px 0;
+    }
+
+    p {
+        margin: 10px 0;
+        font-size: 13px;
+        color: grey;
+    }
+}
+
+.editor {
+    width: 350px;
+    padding: 5px 10px;
+}
+form {
+    color: black;
+} 
+
+.profile-form {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    align-items: flex-start;
+    gap: 5px;
+    width: 100%;
+    max-width: 350px;
+
+    label {
+        font-weight: bold;
+        font-size: 17px;
+    }
+
+    input {
+        width: 95%;
+        padding: 8px;
+        font-size: 13px;
+        border: 1px solid black;
+        border-radius: 3px;
+    }
+
+    button {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        color: black;
+        padding: 8px;
+        font-size: 14px;
+        border-radius: 3px;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+
+    #bg-color-input {
+        width: 100%;
+    }
+}
+.profile-form button:hover {
+    background: #dfdede;
+}
+
+
+
+
