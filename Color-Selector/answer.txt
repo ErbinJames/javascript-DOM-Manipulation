@@ -1,0 +1,10 @@
+Tasks:
+
+Click a color button. What happens?
+Uncomment event.stopPropagation(); inside the button click handler.
+Click a color button again. What changed?
+Explain in your own words why event.stopPropagation() is useful in this example.
+
+- Initially, when I click on any color button, both the button and its container trigger their respective event handlers at the same time.
+- After uncommenting event.stopPropagation();, only the button's event is triggered, and the container's event no longer executes.
+In summary, event.stopPropagation(); prevents an event from bubbling up to parent elements. This ensures that only the intended event handler runs, stopping any unintended behaviors caused by parent event listeners.
