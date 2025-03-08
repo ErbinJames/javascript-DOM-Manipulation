@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Fireflies</title>
+    <style>
+        .firefly {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Catch the Fireflies!</h1>
+    <img src="gifs/3uFr.gif" class="firefly">
+    <img src="gifs/3uFr.gif" class="firefly">
+    <img src="gifs/3uFr.gif" class="firefly">
+    <img src="gifs/3uFr.gif" class="firefly">
+
+    <script>
+        // Select all fireflies
+        let fireflies = document.querySelectorAll(".firefly");
+
+        // Attach event listener to each firefly
+    fireflies.forEach(firefly => {
+        firefly.addEventListener("click", function() {
+            const originalSrc = "gifs/3uFr.gif"; // Store the original firefly image
+            this.src = "gifs/explosion.gif"; // Change to explosion GIF
+            this.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out"; 
+            this.style.transform = "scale(0)"; // Shrink the firefly
+            this.style.opacity = "0"; // Fade it out
+
+        setTimeout(() => {
+            this.src = originalSrc; // Revert back to firefly image
+            this.style.transform = "scale(1)"; // Reset size
+            this.style.opacity = "1"; // Make it visible again
+        }, 1000); // Show firefly again after 1 second 
+    });
+});
+    </script>
+</body>
+</html>
