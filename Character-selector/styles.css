@@ -1,0 +1,201 @@
+* {
+    padding:0;
+    margin: 0;
+    /* border: 1px dotted red;   */
+}
+
+nav {
+    margin-top: 0px;
+    background-color: white;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: space-between;
+}
+
+.top-logo {
+    height: 40px;
+    width: 110px;
+}
+
+.right-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.searchbar {
+    color: #757575;
+    width: 65px;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    border-style: none;
+}
+.right-nav i {
+    color: #757575;
+}
+html {
+    height: 100%;
+}
+body {
+    background-image: url('assets/mariokart-wallpaper.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: "Teko", sans-serif;
+  }
+
+.logo-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+
+  }
+  .body-logo {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 40px;
+}
+
+.left-panel {
+    width: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        margin-top: 40px;
+        margin-bottom: 5px;
+        font-size: 40px;
+        color: white;
+    }
+}
+
+.main-content {
+    display: flex;
+    height: calc(100vh - 140px); 
+    max-height: 850px; 
+    overflow: hidden; 
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: 40%;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: rgba(173, 216, 230, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-height: 350px; 
+}
+
+.character-item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(173, 216, 230, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+.character-item img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.character-item:hover {
+    transform: scale(1.05);
+    background-color: rgba(135, 206, 250, 0.7);
+}
+
+.character-item.selected {
+    background-color: rgba(144, 238, 144, 0.7);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    border: 2px solid #4CAF50;
+}
+
+.character-name {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.right-panel {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 45%;
+    height: 90%;
+    position: relative; 
+}
+
+.right-panel.active {
+    display: flex !important;
+    margin-top:10px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+
+.photo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#character-title {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+#character-description {
+    font-size: 30px;
+    color: white;
+    max-width: 100%; 
+}
+
+#selected-character-img {
+    width: 80%;
+    max-height: 350px;
+    object-fit: contain;
+    margin-top: 20px;
+}
+
