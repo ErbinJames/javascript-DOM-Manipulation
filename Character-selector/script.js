@@ -21,22 +21,39 @@ const characterDescriptions = {
 // Initially hide right panel
 rightPanel.classList.add("hidden");
 
+/** 
+ * DOCU: Updates the selected character's details in the UI  
+ * @param {string} characterName - The name of the selected character   
+ */
+function updateCharacterDetails(characterName) {
+    const formattedName = characterName.replace("-", " "); // Ensure proper spacing in names
+
+    characterNameElement.textContent = formattedName.charAt(0).toUpperCase() + formattedName.slice(1);
+    characterTitle.textContent = formattedName.charAt(0).toUpperCase() + formattedName.slice(1);
+    characterDescription.textContent = characterDescriptions[characterName] || "A brave racer ready for action!";
+    characterImage.src = `assets/character-poses/${characterName}.png`;
+    characterImage.style.display = "block"; // Show character image on selection
+}
+
+/** 
+ * DOCU: Handles character selection, updates UI and applies styling  
+ * @param {HTMLElement} selectedItem - The selected character item element    
+ */
+function handleCharacterSelection(selectedItem) {
+    // Remove 'selected' class from all character items and add it to the clicked one
+    characterItems.forEach(i => i.classList.remove("selected"));
+    selectedItem.classList.add("selected");
+
+    // Get the character name from the data attribute and update details
+    const characterName = selectedItem.getAttribute("data-character");
+    updateCharacterDetails(characterName);
+
+    // Display the right panel
+    rightPanel.classList.remove("hidden");
+    rightPanel.classList.add("active");
+}
+
+// Attach event listeners
 characterItems.forEach(item => {
-    item.addEventListener("click", () => {
-        characterItems.forEach(i => i.classList.remove("selected"));
-        item.classList.add("selected");
-
-        const characterName = item.getAttribute("data-character");
-        const formattedName = characterName.replace("-", " "); // Ensure proper spacing in names
-
-        characterNameElement.textContent = formattedName.charAt(0).toUpperCase() + formattedName.slice(1);
-        characterTitle.textContent = formattedName.charAt(0).toUpperCase() + formattedName.slice(1);
-        characterDescription.textContent = characterDescriptions[characterName] || "A brave racer ready for action!";
-
-        characterImage.src = `assets/character-poses/${characterName}.png`;
-        characterImage.style.display = "block"; // Show character image on selection
-        
-        rightPanel.classList.add("active"); // Show right panel
-
-    });
+    item.addEventListener("click", () => handleCharacterSelection(item));
 });
