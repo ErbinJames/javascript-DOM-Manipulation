@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid red; */
+}
+
+h1, h2 {
+    font-family: 'Cinzel', serif;
+}
+
+body {
+    width: 100%;
+    background-color: #EBF4F6; 
+    font-family: 'Merriweather', serif;
+
+    h1 {
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+.container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+.gear-selection {
+    h2 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    h3 {
+        font-size: 20px;
+        padding: 5px;
+    }
+}
+
+.gear-category img {
+    height: 80px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: 2px solid transparent;
+}
+
+
+.gear-category img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border-color: #37B7C3;
+}
+
+.preview-character {
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 40%;
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #37B7C3;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: white;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.preview-character:hover {
+    border-color: #088395;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.preview-character h2 {
+    margin-top: 10px;
+    color: #071952;
+}
+
+.character-container {
+    position: relative;
+    width: 80px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.character-container img {
+    position: absolute;
+    height: 150px;
+    width: 130px;
+    transition: opacity 0.3s ease-in-out, filter 0.2s ease-in-out;
+}
+
+
+.character-container img:hover {
+    opacity: 0.8;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+    cursor: pointer;
+}
+
+
+.character-container .helmet {
+    top: 20px;
+}
+
+.character-container .armor {
+    top: 120px;
+}
+
+.character-container .leggings {
+    top: 230px;
+}
+
+.character-container .boots {
+    top: 335px;
+}
